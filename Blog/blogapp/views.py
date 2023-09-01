@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 from .permissions import Mypermission
+from .pagination import Mypage
 
 
 class Blog(ViewSet):
@@ -64,6 +65,7 @@ class Blog(ViewSet):
         
 class GetAll(ViewSet):
     permission_classes=[Mypermission]
+    pagination_class=Mypage
     def list(self,request):
         blog=BlogPost.objects.all()
         ser=BlogSerializer(blog,many=True)
