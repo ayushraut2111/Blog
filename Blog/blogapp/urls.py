@@ -7,7 +7,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView,
 router=DefaultRouter()
 
 router.register('blog',views.Blog,basename='blog')     # this is authenticated api and only registered user can CRUD blogs from this website
-router.register('getall',views.GetAll,basename='allblogs')
+router.register('getall',views.GetAll,basename='allblogs') # with the help of this url anyone can access all the blogs
 
 urlpatterns = [
     path('',include(router.urls)),
