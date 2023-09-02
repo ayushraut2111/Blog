@@ -97,6 +97,7 @@ url= "http://127.0.0.1:8000/blog/id/"
 
 
 2. To get all the blogs there is another api, anyone can make request on this api to read all the blogs :-
+   No authentication is required to access this api as it is for reading all blogs
 
 url= "http://127.0.0.1:8000/getall/"
 
