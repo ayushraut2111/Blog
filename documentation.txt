@@ -58,7 +58,7 @@ for logging out send post request on the above url and you will logout.
 
 url="http://127.0.0.1:8000/api/token/refresh/"
 
-to get new token send post request to the above url with refresh token in json format defined below
+to get new access token send post request to the above url with refresh token in json format defined below
 
 {
     "refresh": ""
