@@ -33,6 +33,8 @@ for registration you have to send post request to the above url with user inform
     "password2": ""
 }
 
+after regitering you will get access token and refresh token in response for that registered user
+
 2. For Login :-
 
 url="http://127.0.0.1:8000/dj-rest-auth/login/"
@@ -44,7 +46,7 @@ for logging in send post request to above url with user info in json format that
     "username": "",
     "password": ""
 }
- after loggin in you will get access token and refersh token in response for making request to the server.
+ after logging in also  you will get access token and refersh token in response for making request to the server.
 
 3. For logout :-
 

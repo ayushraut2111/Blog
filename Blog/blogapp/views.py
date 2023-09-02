@@ -64,6 +64,7 @@ class Blog(ViewSet):
 
         
 class GetAll(ViewSet):
+    authentication_classes=[]
     permission_classes=[Mypermission]
     pagination_class=Mypage
     def list(self,request):
