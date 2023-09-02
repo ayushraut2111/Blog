@@ -43,7 +43,7 @@ urlpatterns = [
 # }
 
 
-#for refreshing token
+# for refreshing token
 # {
 #     "refresh": ""
 # }

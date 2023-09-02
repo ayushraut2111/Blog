@@ -1,0 +1,85 @@
+In this assignment i made a backend for writing blogs.There are 2 api for blogs in this project one for the authenticated user to 
+create,read,update,delete their blogs and with the help of another api anyone can read all the blogs and this 2nd api only
+supports readonly method so no one can modify the blogs from this api.
+Pagination is also used to view the result, i have set limit to 10 so only 10 results are shown at a time.
+
+This backend includes user signup and login functionalities which is implemented with the help of dj-rest-auth, backend is authenticated 
+with JWT authentication so for creating,updating,deleting blogs you need access token to make requests. so as soon as you login with the help
+of login api, it returns access token and refresh token in response. So with the help of access token you can make requests and after access token 
+expires, with the help of refresh token you can request new access token and again make requests.
+By default access token is valid for only 5 minutes and refresh token is valid for 1 day,so after every 5 minutes you have to again regenerate access
+token with the help of refresh token.
+
+How to run the project :-
+1. first clone the Blog repository and after cloning you will get "requirements.txt" file so first install all the reuqirements to run the project.
+2. Open Blog folder and run command "python manage.py runserver" to run the backend.
+3. Inside Blog folder you will get "blogapp" folder, inside this folder there is all the codes written for the backend.
+3. In blogapp folder - DB tables are defined in models.py, api code is written in views.py, in urls.py we have all the urls to access api's.
+
+
+How to test the backend :-
+For testing the backend you can use postman.
+
+1. For user registration :-
+
+url= "http://127.0.0.1:8000/dj-rest-auth/registration/"
+
+for registration you have to send post request to the above url with user information in below json format.
+
+{
+    "username": "",
+    "email": "",
+    "password1": "",
+    "password2": ""
+}
+
+2. For Login :-
+
+url="http://127.0.0.1:8000/dj-rest-auth/login/"
+
+
+for logging in send post request to above url with user info in json format that is shown below,
+
+{
+    "username": "",
+    "password": ""
+}
+ after loggin in you will get access token and refersh token in response for making request to the server.
+
+3. For logout :-
+
+url= "http://127.0.0.1:8000/dj-rest-auth/logout/"
+
+for logging out send post request on the above url and you will logout.
+
+4. For refreshing token :-
+
+url="http://127.0.0.1:8000/api/token/refresh/"
+
+to get new token send post request to the above url with refresh token in json format defined below
+
+{
+    "refresh": ""
+}
+
+
+After logging in you can now make request to the blog api :-
+
+1. To check the authenticated api for creating,reading,updating,deleting blogs :-
+
+first add access token in your header and make request on the below api because this api is authenticated with jwt authentication
+
+url= "http://127.0.0.1:8000/blog/"
+
+for posting blogs make post request on above url in json format shown below 
+
+{
+    "Title": "",
+    "Body": ""
+}
+
+2. To get all the blogs there is another api, anyone can make request on this api to read all the blogs :-
+
+url= "http://127.0.0.1:8000/getall/"
+
+This url only supports get request only so no one can modify with this api.
