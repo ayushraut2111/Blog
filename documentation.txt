@@ -65,9 +65,11 @@ to get new token send post request to the above url with refresh token in json f
 
 After logging in you can now make request to the blog api :-
 
+
+
 1. To check the authenticated api for creating,reading,updating,deleting blogs :-
 
-first add access token in your header and make request on the below api because this api is authenticated with jwt authentication
+first add access token in your header and make requests on the below api because this api is authenticated with jwt authentication
 
 url= "http://127.0.0.1:8000/blog/"
 
@@ -77,6 +79,20 @@ for posting blogs make post request on above url in json format shown below
     "Title": "",
     "Body": ""
 }
+
+
+for updating make put and patch request on the url with id of the post and json format as shown below
+url= "http://127.0.0.1:8000/blog/id/"
+
+{
+    "Title": "",
+    "Body": ""
+}
+
+for deleting blogs make delete request on the url with id of the post 
+url= "http://127.0.0.1:8000/blog/id/"
+
+
 
 2. To get all the blogs there is another api, anyone can make request on this api to read all the blogs :-
 
