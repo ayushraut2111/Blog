@@ -165,7 +165,7 @@ REST_AUTH = {
     'SESSION_LOGIN': False,
     'USE_JWT': True,                # by making it true it will give jwt token on login
 
-    'JWT_AUTH_COOKIE': None,
+    'JWT_AUTH_COOKIE': 'access',
     'JWT_AUTH_REFRESH_COOKIE': None,
     # 'JWT_AUTH_REFRESH_COOKIE_PATH': '/',
     'JWT_AUTH_SECURE': False,
